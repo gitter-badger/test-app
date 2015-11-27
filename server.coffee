@@ -1,9 +1,11 @@
 express = require 'express'
-app = express()
+exphbs  = require 'express-handlebars'
 
 port = process.env.PORT or 8080
 
-app.set 'view engine', 'ejs'
+app = express()
+app.engine 'handlebars', exphbs({defaultLayout: 'main'})
+app.set 'view engine', 'handlebars'
 app.use express.static(__dirname + '/public')
 
 # routes
