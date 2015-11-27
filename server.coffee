@@ -6,7 +6,7 @@ port = process.env.PORT or 8080
 app = express()
 app.engine 'handlebars', exphbs({defaultLayout: 'main'})
 app.set 'view engine', 'handlebars'
-app.use express.static(__dirname + '/public')
+app.use '/static', express.static('public')
 
 # routes
 app.get '/', (req, res) -> 
