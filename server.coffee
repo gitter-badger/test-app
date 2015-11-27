@@ -11,7 +11,7 @@ app.get '/', (req, res) ->
   res.render 'index'
   
 app.get '/user/:id', (req, res) -> 
-  res.send req.params.id
+  res.render 'profile', {"id" : req.params.id}
 
 app.use (req, res, next) -> 
   res.status 404
