@@ -1,2 +1,3 @@
-body 						{ padding-top:50px; }
-.container .jumbotron   	{ border-radius:40px; }
+body {
+  background-color: #1d2b3d;
+}
