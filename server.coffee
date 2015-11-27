@@ -7,9 +7,16 @@ app.set 'view engine', 'ejs'
 app.use express.static(__dirname + '/public')
 
 # routes
-app.get '/', (req, res) -> res.render 'index'
+app.get '/', (req, res) -> 
+  res.render 'index'
+  
+app.get '/user/:id', (req, res) -> 
+  res.send req.params.id
+
+app.use (req, res, next) -> 
+  res.status 404
+  res.render '404'
   
 # listen
 app.listen port, ->
-  console.log "running on http://localhost/#{port}"
-  return
+  console.log "running on http://localhost#{port}"
