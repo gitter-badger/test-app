@@ -1,3 +1,3 @@
 #!/bin/sh
-coffee -c server.coffee
-node server.js 
+rake build:server
+node server.js
